@@ -41,9 +41,10 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
-  // if (req.app.get('env') === 'development') {
-  return res.status(err.status).send(err.message);
-  // return res.sendStatus(err.status || 500)
+  res.locals.message = err.msg;
+  res.locals.error = err;
+  res.status(err.status);
+  return res.send(err);
 });
 
 app.listen(process.env.port, () => {
