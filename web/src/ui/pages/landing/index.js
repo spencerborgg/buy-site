@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CSSModules from "react-css-modules";
 import * as axiosWrapper from "../../../utilities/axios/wrapper";
-
+import { Link } from "react-router-dom";
 import css from "./index.css";
 import { protectedRoute } from "../../../process/users/auth";
 
@@ -43,6 +43,7 @@ class LandingPage extends Component {
     if (this.state.allTheItems.length) {
       return (
         <div>
+          <Link to="/itemDiscript">item discript page</Link>
           items:
           <ol>{this.drawItemsOnScreen()}</ol>
         </div>

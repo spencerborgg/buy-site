@@ -12,6 +12,7 @@ import Home from "./homepage/";
 import Login from "./login/";
 import SignOut from "./sign-out";
 import AboutPage from "./aboutpage";
+import ItemDiscript from "./itemDiscript";
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
             <Route exact path="/landing" component={Landing} />
             <Route exact path="/sign-out" component={SignOut} />
             <Route exact path="/about-us" component={AboutPage} />
+            <Route exact path="/itemDiscript" component={ItemDiscript} />
           </Switch>
         </div>
         <div styleName="footer-container">
