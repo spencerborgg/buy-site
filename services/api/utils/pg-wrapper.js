@@ -15,9 +15,7 @@ class PGWrapper {
       console.warn('PG Wrapper already initialized.')
       return
     }
-    this._pool = new Pool({
-      connectionString: process.env.DATABASE_URL
-    })
+    this._pool = new Pool()
   }
 
   async shutdown() {

@@ -1,4 +1,4 @@
-import { 
+import {
   getCreatorInfo,
   getCreatorsList,
   randomDailyMessage
@@ -13,6 +13,7 @@ export default class AuthController {
   }
 
   async getMessage(req, res) {
+    console.log("HERE in the endpoint")
     const message = await randomDailyMessage();
     res.send({ message });
   }

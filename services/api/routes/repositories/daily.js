@@ -10,7 +10,7 @@ const userDTO = row => ({
   lastName: row.last_name,
   suffix: row.suffix,
   email: row.email,
-  joined: row.joined_date  
+  joined: row.joined_date
 })
 
 const userListDTO = row => ({
@@ -20,6 +20,7 @@ const userListDTO = row => ({
 })
 
 export async function fetchMessage(id) {
+  console.log("HERE in the endpoint")
   const query = sql`select * from daily_messages where id = ${id};`;
 
   const message = await PGWrapper.sqlAndMap(query, row => ({

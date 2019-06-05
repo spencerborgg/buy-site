@@ -1,10 +1,11 @@
-import { 
+import {
   fetchCreatorsDetails,
   fetchCreatorInfo,
   fetchMessage
- } from '../repositories/daily'
+} from '../repositories/daily'
 
 export async function randomDailyMessage() {
+  console.log("HERE in the command")
   const randomNumber = 1 + Math.floor(Math.random() * Math.floor(7))
   return fetchMessage(randomNumber)
 }
