@@ -6,7 +6,13 @@ import connected from "../../../../state/connect";
 import { selector as user } from "../../../../process/users/reducer";
 
 const options = [
-  { key: "profile", as: Link, to: "/profile", text: "Account", icon: "user" },
+  {
+    key: "profile",
+    as: Link,
+    to: "/profile",
+    text: "Profile",
+    icon: "user"
+  },
   {
     key: "settings",
     as: Link,
@@ -35,6 +41,11 @@ class HeaderNavLinks extends Component {
     );
 
     return [
+      <div key="cart" >
+        <Link to={"/cart"}>
+          cart: {this.props.numOfItemsInCart}
+        </Link>
+      </div>,
       <Dropdown
         key="user-dropdown"
         trigger={trigger}

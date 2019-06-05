@@ -4,6 +4,7 @@ import * as axiosWrapper from "../../../utilities/axios/wrapper";
 import { Link } from "react-router-dom";
 import css from "./index.css";
 import { protectedRoute } from "../../../process/users/auth";
+// import Link from 'react-router-dom';
 
 class LandingPage extends Component {
   constructor(props) {
@@ -17,7 +18,6 @@ class LandingPage extends Component {
     axiosWrapper
       .get("/items")
       .then(response => {
-        console.log("did i do anything", response);
         this.setState({ allTheItems: response.data.items });
       })
       .catch(err => {
@@ -31,10 +31,10 @@ class LandingPage extends Component {
   drawItemsOnScreen = () => {
     if (this.state.allTheItems) {
       return this.state.allTheItems.map((item, i) => (
-        <li key={i}>
-          <span>{item.itemName}</span>
+        <div key={i}>
+          <Link to={`/items/${item.itemHandle}`}>{item.itemName} </Link>
           <span>{item.itemPrice}</span>
-        </li>
+        </div>
       ));
     }
   };
@@ -43,9 +43,8 @@ class LandingPage extends Component {
     if (this.state.allTheItems.length) {
       return (
         <div>
-          <Link to="/itemDiscript">item discript page</Link>
           items:
-          <ol>{this.drawItemsOnScreen()}</ol>
+          <div>{this.drawItemsOnScreen()}</div>
         </div>
       );
     } else if (this.state.error) {

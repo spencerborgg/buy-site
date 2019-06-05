@@ -82,39 +82,6 @@ class AboutPage extends Component {
       });
   };
 
-  // renderSpotlight = () => {
-  //   const { creator, updatedCreator } = this.state;
-  //   if (creator && creator.firstName) {
-  //     return (
-  //       <div>
-  //         <div>{creator.firstName}</div>
-  //         <div>{creator.email}</div>
-  //         <form
-  //           onSubmit={event =>
-  //             this.submitCreatorUpdate(event, creator.userHandle)
-  //           }
-  //         >
-  //           <input
-  //             type="text"
-  //             value={updatedCreator.firstName}
-  //             placeholder="First Name"
-  //             onChange={this.updateCreator}
-  //           />
-  //           <button
-  //             type="submit"
-  //             onClick={event =>
-  //               this.submitCreatorUpdate(event, creator.userHandle)
-  //             }
-  //           >
-  //             Update
-  //           </button>
-  //         </form>
-  //       </div>
-  //     );
-  //   }
-  //   return null;
-  // };
-
   render() {
     return (
       <div styleName="container">
